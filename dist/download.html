@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>О компании</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Poly:400i|Roboto&amp;subset=cyrillic" rel="stylesheet">
+    <script src="js/common.js"></script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="login">
+            <h2>
+                Личный кабинет
+            </h2>
+            <form type="text" action="testreg.php" method="post">
+                <p><input type="text" class="input" placeholder="Логин" name="user"></p>
+                <p><input type="text" class="input" placeholder="Пароль" name="password"></p>
+                <p><input class="button lil-red" type="submit" value="ДАЛЕЕ"></p>
+                <p onClick="LoginMotion()">Отмена</p>
+                <a href="">Забыли пароль?</a>
+            </form>
+        </div>
+        <div id="header-slide">
+            <div class="block-size">
+                <header>
+                    <h1><span class="roboto">Health</span>&nbsp<span class="poly">Adviser</span></h1>
+                </header>
+                <article>
+                    Давайте контролировать уровень вашего здоровья вместе с профессиональной командой <span class="roboto">Health</span>
+                    <span class="poly">Adviser</span>
+                </article>
+                <div class="row-of-buttons">
+                    <a href="">
+                        <div class="button big-red">
+                            IOS
+                        </div>
+                    </a>
+                    <a href="">
+                        <div class="button big-red">
+                            Android
+                        </div>
+                    </a>
+                    <div class="button big-white" onClick="LoginMotion()"> Личный кабинет</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>

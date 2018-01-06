@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css?family=Poly:400i|Roboto&subset=cyrillic');
+//Colors
+$background: #fefefe;
+$red: #DB1500;
+$grey: #5E5E5E;
+//Shadows
+//Shadows
+$inset-shadow: inset 0px 4px 100px rgba(0,
+0,
+0,
+0.25);
+$layer-shadow: 0px -8px 32px rgba(0,
+0,
+0,
+0.25);
+$box-shadow: 0px 4px 16px rgba(0,
+0,
+0,
+0.25);
+$box-shadow-active: 0px 0px 4px rgba(0,
+0,
+0,
+0.25);
+//Fonts
+$font-poly: 'Poly',
+serif;
+$font-roboto: 'Roboto',
+sans-serif;
+//Mixins
+//Sass code
+.big-red {
+    width: 250px;
+    height: 63px;
+    background: $red;
+    color: white;
+    line-height: 63px;
+    font-size: 24px;
+}
+
+.big-white {
+    width: 250px;
+    height: 63px;
+    background: $background;
+    color: $red;
+    line-height: 63px;
+    font-size: 24px;
+}
+
+.lil-red {
+    //width: 150px;
+    height: 36px;
+    background: $red;
+    color: white;
+    font-size: 13px;
+    line-height: 36px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.lil-white {
+    //width: 150px;
+    height: 36px;
+    background: $background;
+    color: $red;
+    font-size: 13px;
+    line-height: 36px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.button {
+    border: 0;
+    //margin: 15px;
+    box-shadow: $box-shadow;
+    border-radius: 3px;
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+}
+
+.button:active {
+    box-shadow: $box-shadow-active;
+}
+
+body {
+    font-family: $font-roboto;
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+    text-decoration: none;
+    z-index: 0;
+}
+
+.poly {
+    font-family: $font-poly;
+    font-style: italic;
+    font-weight: 300;
+    color: black;
+}
+
+.roboto {
+    font-family: $font-roboto;
+    color: $red;
+}
+
+#wrapper {
+    min-width: 100%;
+    overflow-x: hidden;
+}
+
+#header-slide {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $inset-shadow;
+    position: fixed;
+    z-index: 2;
+}
+
+.block-size {
+    min-width: 1024px;
+    max-width: 1024px;
+    margin: auto;
+    padding: 0px;
+}
+
+#header-slide h1 {
+    color: $red;
+    font-weight: 700;
+    font-size: 144px !important;
+    margin: 0px;
+    padding: 0px;
+}
+
+#header-slide article {
+    font-weight: 700;
+    font-size: 24px !important;
+    margin: 0px;
+    padding: 0px;
+}
+
+.row-of-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.row-of-buttons a {
+    text-decoration: none;
+}
+
+.row-of-buttons div {
+    margin: 15px;
+}
+
+//Description
+#description-slide {
+    width: 100%;
+    margin-top: 100vh;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: $background;
+    box-shadow: $layer-shadow;
+    position: relative;
+    z-index: 4;
+}
+
+#description-slide h2 {
+    color: $red;
+}
+
+.text-block {
+    max-width: 100%;
+}
+
+.title>h2 {
+    color: $red;
+    font-size: 64px;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+
+.text {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+#skills {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#skills>div {
+    width: 330px;
+    height: 250px;
+}
+
+#space-slide {
+    width: 100%;
+    height: 100vh;
+}
+
+//Login
+#login {
+    width: 300px;
+    height: 100vh;
+    padding-top: 10%;
+    color: $grey;
+    background: $background;
+    box-shadow: $layer-shadow;
+    display: flex;
+    flex-direction: column;
+    //justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 100%;
+    z-index: 10;
+}
+
+.input {
+    width: 250px;
+    height: 40px;
+    border: 0;
+    border-bottom: 2px solid $grey;
+    padding: 0px;
+    color: $grey;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 18px;
+}
+
+input[type="text"]:focus {
+    padding: 0px;
+    border: 0;
+    border-bottom: 2px solid $red;
+    box-shadow: none;
+}
+
+$num-of-tabs: 2;
+@mixin tabs {
+    @for $i from 1 through $num-of-tabs {
+        &:nth-of-type(#{$i}) {
+            &:checked {
+                ~.slide {
+                    left: calc((100% / #{$num-of-tabs}) * #{$i - 1});
+                }
+            }
+        }
+    }
+}
+
+.tab-wrap {
+    width: 250px;
+    position: relative;
+    display: flex;
+}
+
+input[type="radio"][name="tabs"] {
+    display: none;
+    position: absolute;
+    z-index: -1;
+    &:checked {
+        +.tab-label-content {
+            .tab-content {
+                display: block;
+            }
+            label {
+                font-weight: bold;
+            }
+        }
+    }
+    @include tabs;
+    &:first-of-type {
+        &:checked {
+            ~.slide {
+                left: 0;
+            }
+        }
+    }
+}
+
+label {
+    cursor: pointer;
+    color: $red;
+    border-bottom: 2px solid $grey;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 56px;
+    transition: color 0.2s ease;
+    width: 100%;
+}
+
+.slide {
+    background: $red;
+    width: calc(100% / #{$num-of-tabs});
+    height: 4px;
+    position: absolute;
+    left: 0;
+    top: calc(100% - 4px);
+    transition: left 0.3s ease-out;
+}
+
+.tab-label-content {
+    width: 100%;
+    .tab-content {
+        position: absolute;
+        display: none;
+    }
+}
+
+form[name="registration"] {
+    margin-left: -125px;
+}
+
+//Team
+#team {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#team div {
+    width: 200px;
+    height: 250px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
